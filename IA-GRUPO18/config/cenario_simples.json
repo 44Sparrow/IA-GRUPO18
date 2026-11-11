@@ -1,0 +1,55 @@
+{
+  "nome": "Cenario Simples",
+  "dimensoes": {
+    "largura": 5,
+    "altura": 5
+  },
+  "locais": [
+    {"id": "entrada", "tipo": "entrada", "posicao": {"x": 0, "y": 2}},
+    {"id": "corredor_1", "tipo": "corredor", "posicao": {"x": 1, "y": 2}},
+    {"id": "corredor_2", "tipo": "corredor", "posicao": {"x": 2, "y": 2}},
+    {"id": "corredor_3", "tipo": "corredor", "posicao": {"x": 2, "y": 3}},
+    {"id": "corredor_4", "tipo": "corredor", "posicao": {"x": 3, "y": 3}},
+    {"id": "sala_bens", "tipo": "sala", "posicao": {"x": 3, "y": 2}},
+    {"id": "saida", "tipo": "saida", "posicao": {"x": 4, "y": 2}}
+  ],
+  "ligacoes": [
+    {"origem": "entrada", "destino": "corredor_1", "custo": 1, "bidirecional": true},
+    {"origem": "corredor_1", "destino": "corredor_2", "custo": 1, "bidirecional": true},
+    {"origem": "corredor_2", "destino": "sala_bens", "custo": 1, "bidirecional": true},
+    {"origem": "sala_bens", "destino": "saida", "custo": 1, "bidirecional": true},
+    {"origem": "corredor_2", "destino": "corredor_3", "custo": 1, "bidirecional": true},
+    {"origem": "corredor_3", "destino": "corredor_4", "custo": 1, "bidirecional": true},
+    {"origem": "corredor_4", "destino": "saida", "custo": 2, "bidirecional": true}
+  ],
+  "portas": [
+    {
+      "id": "porta_1",
+      "origem": "corredor_2",
+      "destino": "sala_bens",
+      "aberta": true
+    }
+  ],
+  "barreiras": [
+    {
+      "id": "barreira_1",
+      "origem": "corredor_3",
+      "destino": "corredor_4",
+      "ativa": false
+    }
+  ],
+  "estacoes_recarga": [
+    {
+      "id": "recarga_1",
+      "local": "corredor_1"
+    }
+  ],
+  "bens": [
+    {
+      "id": "bem_1",
+      "local": "sala_bens",
+      "valor": 100,
+      "recolhido": false
+    }
+  ]
+}
